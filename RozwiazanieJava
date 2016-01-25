@@ -7,27 +7,32 @@ public class zagadka
 {
 	public static void main(String[] args) 
 	{
-       int start = 1000000000;			// int jest za mały - zwiekszyc pojemnosc
-       int iloscIteracji;
+       long start = 0;			// int jest za mały - zwiekszyc pojemnosc
+       long iloscIteracji;
+       
+       System.out.println("wpisz wartosc startowa: ");
+       Scanner odczyt1 = new Scanner(System.in);
+       
+       start = odczyt1.nextLong();
        
        System.out.println("wpisz ilosc iteracji: ");
-       Scanner odczyt = new Scanner(System.in);
+       Scanner odczyt2 = new Scanner(System.in);
        
-		iloscIteracji = odczyt.nextInt();
+		iloscIteracji = odczyt2.nextLong();
 		
-		System.out.println("iteracji: "+iloscIteracji);
+		//System.out.println("iteracji: "+iloscIteracji);
 		
-		for(int i = 0; i < iloscIteracji; i++)	// wybieram ile kolejnych liczb sprawdzic, zeby nie zajechac komputera
+		for(long i = 0; i < iloscIteracji; i++)	// wybieram ile kolejnych liczb sprawdzic, zeby nie zajechac komputera
 		{
 			start++;
 			
-			System.out.println(start);
+			//System.out.println(start);
 			
 			String liczba = start +"";	//zamiana int na string
 			char[] cyfra = liczba.toCharArray();	//zamiana string na char
 			
 			
-			System.out.println("liczba sklada sie z: " + cyfra[0] +", "+ cyfra[1] +", "+ cyfra[2] +", "+ cyfra[3] +", "+ cyfra[4] +", "+ cyfra[5] +", "+ cyfra[6] +", "+ cyfra[7] +", "+ cyfra[8] +", "+ cyfra[9]);
+			//System.out.println("liczba sklada sie z: " + cyfra[0] +", "+ cyfra[1] +", "+ cyfra[2] +", "+ cyfra[3] +", "+ cyfra[4] +", "+ cyfra[5] +", "+ cyfra[6] +", "+ cyfra[7] +", "+ cyfra[8] +", "+ cyfra[9]);
 			//dziala
 			
 			/*---------------zliczanie znakow-----------------------*/
@@ -43,7 +48,7 @@ public class zagadka
 			int ile_cyfr8=0;
 			int ile_cyfr9=0;
             
-			for (int a = 0 ; a < 10 ; a++) 
+			for (int a = 0 ; a < liczba.length() ; a++) 
 			{
 				char cyfra1 = liczba.charAt(a); 
 				if(cyfra1 == '0') 
@@ -89,24 +94,142 @@ public class zagadka
 				
 					
 			}   
-			System.out.println("ile cyfr '0': "+ ile_cyfr0 +"\nile cyfr '1': "+ ile_cyfr1+"\nile cyfr '2': "+ ile_cyfr2+"\nile cyfr '3': "+ ile_cyfr3+"\nile cyfr '4': "+ ile_cyfr4+"\nile cyfr '5': "+ ile_cyfr5+"\nile cyfr '6': "+ ile_cyfr6+"\nile cyfr '7': "+ ile_cyfr7+"\nile cyfr '8': "+ ile_cyfr8+"\nile cyfr '9': "+ ile_cyfr9);
+			//System.out.println("ile cyfr '0': "+ ile_cyfr0 +"\nile cyfr '1': "+ ile_cyfr1+"\nile cyfr '2': "+ ile_cyfr2+"\nile cyfr '3': "+ ile_cyfr3+"\nile cyfr '4': "+ ile_cyfr4+"\nile cyfr '5': "+ ile_cyfr5+"\nile cyfr '6': "+ ile_cyfr6+"\nile cyfr '7': "+ ile_cyfr7+"\nile cyfr '8': "+ ile_cyfr8+"\nile cyfr '9': "+ ile_cyfr9);
 			
 			
 			/*----------------------warunki dla......spelnienia warunkow :)-------*/
 			
-			if((cyfra[0] == 1)&&(ile_cyfr0 == 7)&&(ile_cyfr2 == 2))  // sprawdenie dla przykladowych warunkow
+			int ile_rozw=0;
+			
+			if(
+				(((cyfra[0] == '1')&&(ile_cyfr0 == 1))|| //dla zer
+				((cyfra[0] == '2')&&(ile_cyfr0 == 2))||
+				((cyfra[0] == '3')&&(ile_cyfr0 == 3))||
+				((cyfra[0] == '4')&&(ile_cyfr0 == 4))||
+				((cyfra[0] == '5')&&(ile_cyfr0 == 5))||
+				((cyfra[0] == '6')&&(ile_cyfr0 == 6))||
+				((cyfra[0] == '7')&&(ile_cyfr0 == 7))||
+				((cyfra[0] == '8')&&(ile_cyfr0 == 8))||
+				((cyfra[0] == '9')&&(ile_cyfr0 == 9)))	//zabrac z lewej jeden nawias
+				&&
+				(((cyfra[1] == '0')&&(ile_cyfr1 == 0))||	// dla jedynek
+				((cyfra[1] == '1')&&(ile_cyfr1 == 1))||
+				((cyfra[1] == '2')&&(ile_cyfr1 == 2))||
+				((cyfra[1] == '3')&&(ile_cyfr1 == 3))||
+				((cyfra[1] == '4')&&(ile_cyfr1 == 4))||
+				((cyfra[1] == '5')&&(ile_cyfr1 == 5))||
+				((cyfra[1] == '6')&&(ile_cyfr1 == 6))||
+				((cyfra[1] == '7')&&(ile_cyfr1 == 7))||
+				((cyfra[1] == '8')&&(ile_cyfr1 == 8))||
+				((cyfra[1] == '9')&&(ile_cyfr1 == 9)))
+				&&	
+				(((cyfra[2] == '0')&&(ile_cyfr2 == 0))||	// dla dwojek
+				((cyfra[2] == '1')&&(ile_cyfr2 == 1))||
+				((cyfra[2] == '2')&&(ile_cyfr2 == 2))||
+				((cyfra[2] == '3')&&(ile_cyfr2 == 3))||
+				((cyfra[2] == '4')&&(ile_cyfr2 == 4))||
+				((cyfra[2] == '5')&&(ile_cyfr2 == 5))||
+				((cyfra[2] == '6')&&(ile_cyfr2 == 6))||
+				((cyfra[2] == '7')&&(ile_cyfr2 == 7))||
+				((cyfra[2] == '8')&&(ile_cyfr2 == 8))||
+				((cyfra[2] == '9')&&(ile_cyfr2 == 9)))
+				&&
+				(((cyfra[3] == '0')&&(ile_cyfr3 == 0))||	// dla trójek
+				((cyfra[3] == '1')&&(ile_cyfr3 == 1))||
+				((cyfra[3] == '2')&&(ile_cyfr3 == 2))||
+				((cyfra[3] == '3')&&(ile_cyfr3 == 3))||
+				((cyfra[3] == '4')&&(ile_cyfr3 == 4))||
+				((cyfra[3] == '5')&&(ile_cyfr3 == 5))||
+				((cyfra[3] == '6')&&(ile_cyfr3 == 6))||
+				((cyfra[3] == '7')&&(ile_cyfr3 == 7))||
+				((cyfra[3] == '8')&&(ile_cyfr3 == 8))||
+				((cyfra[3] == '9')&&(ile_cyfr3 == 9)))
+				&&
+				(((cyfra[4] == '0')&&(ile_cyfr4 == 0))||	// dla czworek
+				((cyfra[4] == '1')&&(ile_cyfr4 == 1))||
+				((cyfra[4] == '2')&&(ile_cyfr4 == 2))||
+				((cyfra[4] == '3')&&(ile_cyfr4 == 3))||
+				((cyfra[4] == '4')&&(ile_cyfr4 == 4))||
+				((cyfra[4] == '5')&&(ile_cyfr4 == 5))||
+				((cyfra[4] == '6')&&(ile_cyfr4 == 6))||
+				((cyfra[4] == '7')&&(ile_cyfr4 == 7))||
+				((cyfra[4] == '8')&&(ile_cyfr4 == 8))||
+				((cyfra[4] == '9')&&(ile_cyfr4 == 9)))
+				&&
+				(((cyfra[5] == '0')&&(ile_cyfr5 == 0))||	// dla piatek
+				((cyfra[5] == '1')&&(ile_cyfr5 == 1))||
+				((cyfra[5] == '2')&&(ile_cyfr5 == 2))||
+				((cyfra[5] == '3')&&(ile_cyfr5 == 3))||
+				((cyfra[5] == '4')&&(ile_cyfr5 == 4))||
+				((cyfra[5] == '5')&&(ile_cyfr5 == 5))||
+				((cyfra[5] == '6')&&(ile_cyfr5 == 6))||
+				((cyfra[5] == '7')&&(ile_cyfr5 == 7))||
+				((cyfra[5] == '8')&&(ile_cyfr5 == 8))||
+				((cyfra[5] == '9')&&(ile_cyfr5 == 9)))
+				&&
+				(((cyfra[6] == '0')&&(ile_cyfr6 == 0))||	// dla szostek
+				((cyfra[6] == '1')&&(ile_cyfr6 == 1))||
+				((cyfra[6] == '2')&&(ile_cyfr6 == 2))||
+				((cyfra[6] == '3')&&(ile_cyfr6 == 3))||
+				((cyfra[6] == '4')&&(ile_cyfr6 == 4))||
+				((cyfra[6] == '5')&&(ile_cyfr6 == 5))||
+				((cyfra[6] == '6')&&(ile_cyfr6 == 6))||
+				((cyfra[6] == '7')&&(ile_cyfr6 == 7))||
+				((cyfra[6] == '8')&&(ile_cyfr6 == 8))||
+				((cyfra[6] == '9')&&(ile_cyfr6 == 9)))
+				&&
+				(((cyfra[7] == '0')&&(ile_cyfr7 == 0))||	// dla siodemek
+				((cyfra[7] == '1')&&(ile_cyfr7 == 1))||
+				((cyfra[7] == '2')&&(ile_cyfr7 == 2))||
+				((cyfra[7] == '3')&&(ile_cyfr7 == 3))||
+				((cyfra[7] == '4')&&(ile_cyfr7 == 4))||
+				((cyfra[7] == '5')&&(ile_cyfr7 == 5))||
+				((cyfra[7] == '6')&&(ile_cyfr7 == 6))||
+				((cyfra[7] == '7')&&(ile_cyfr7 == 7))||
+				((cyfra[7] == '8')&&(ile_cyfr7 == 8))||
+				((cyfra[7] == '9')&&(ile_cyfr7 == 9)))
+				&&
+				(((cyfra[8] == '0')&&(ile_cyfr8 == 0))||	// dla osemek
+				((cyfra[8] == '1')&&(ile_cyfr8 == 1))||
+				((cyfra[8] == '2')&&(ile_cyfr8 == 2))||
+				((cyfra[8] == '3')&&(ile_cyfr8 == 3))||
+				((cyfra[8] == '4')&&(ile_cyfr8 == 4))||
+				((cyfra[8] == '5')&&(ile_cyfr8 == 5))||
+				((cyfra[8] == '6')&&(ile_cyfr8 == 6))||
+				((cyfra[8] == '7')&&(ile_cyfr8 == 7))||
+				((cyfra[8] == '8')&&(ile_cyfr8 == 8))||
+				((cyfra[8] == '9')&&(ile_cyfr8 == 9)))
+				&&
+				(((cyfra[9] == '0')&&(ile_cyfr9 == 0))||	// dla dziewiatek
+				((cyfra[9] == '1')&&(ile_cyfr9 == 1))||
+				((cyfra[9] == '2')&&(ile_cyfr9 == 2))||
+				((cyfra[9] == '3')&&(ile_cyfr9 == 3))||
+				((cyfra[9] == '4')&&(ile_cyfr9 == 4))||
+				((cyfra[9] == '5')&&(ile_cyfr9 == 5))||
+				((cyfra[9] == '6')&&(ile_cyfr9 == 6))||
+				((cyfra[9] == '7')&&(ile_cyfr9 == 7))||
+				((cyfra[9] == '8')&&(ile_cyfr9 == 8))||
+				((cyfra[9] == '9')&&(ile_cyfr9 == 9)))
+														)   // sprawdzenie warunkow
 			{
-				System.out.println("warunek spełniony");
+				
+				
+				System.out.println("warunek spełniony!!!!!!");
+				System.out.println("Magiczna liczba to: "+ile_cyfr0+ile_cyfr1+ile_cyfr2+ile_cyfr3+ile_cyfr4+ile_cyfr5+ile_cyfr6+ile_cyfr7+ile_cyfr8+ile_cyfr9);
+				
 			}
 			else
 			{
-				System.out.println("liczba nie spełnia warunku. cyfra 0 = "+cyfra[0]+" ile cyfr 0 = "+ile_cyfr0+" ile cyfr 2 = "+ile_cyfr2);
+				//System.out.println("liczba nie spełnia warunku."); //\nliczba '0' = "+ile_cyfr0+"\nliczba '1' = "+ile_cyfr1+"\nliczba '2' = "+ile_cyfr2+"\nliczba '3' = "+ile_cyfr3+"\nliczba '4' = "+ile_cyfr4+"\nliczba '5' = "+ile_cyfr5+"\nliczba '6' = "+ile_cyfr6+"\nliczba '7' = "+ile_cyfr7+"\nliczba '8' = "+ile_cyfr8+"\nliczba '9' = "+ile_cyfr9);
 			}
-			// tu wstawic czesc odpowiadajaca za sprawdzanie warunkow
+			
+			//System.out.println("warunek spełniony przez "+ ile_rozw+" liczb.");
+			
+			
 			
 		}
 		
-		
+		//System.out.println("Liczby spełniające warunek to: ");
 	
     }
 
