@@ -1,0 +1,113 @@
+package zagadka;
+
+import java.util.Scanner;
+import java.util.*;
+
+public class zagadka 
+{
+	public static void main(String[] args) 
+	{
+       int start = 1000000000;			// int jest za mały - zwiekszyc pojemnosc
+       int iloscIteracji;
+       
+       System.out.println("wpisz ilosc iteracji: ");
+       Scanner odczyt = new Scanner(System.in);
+       
+		iloscIteracji = odczyt.nextInt();
+		
+		System.out.println("iteracji: "+iloscIteracji);
+		
+		for(int i = 0; i < iloscIteracji; i++)	// wybieram ile kolejnych liczb sprawdzic, zeby nie zajechac komputera
+		{
+			start++;
+			
+			System.out.println(start);
+			
+			String liczba = start +"";	//zamiana int na string
+			char[] cyfra = liczba.toCharArray();	//zamiana string na char
+			
+			
+			System.out.println("liczba sklada sie z: " + cyfra[0] +", "+ cyfra[1] +", "+ cyfra[2] +", "+ cyfra[3] +", "+ cyfra[4] +", "+ cyfra[5] +", "+ cyfra[6] +", "+ cyfra[7] +", "+ cyfra[8] +", "+ cyfra[9]);
+			//dziala
+			
+			/*---------------zliczanie znakow-----------------------*/
+			
+			int ile_cyfr0=0;
+			int ile_cyfr1=0;
+			int ile_cyfr2=0;
+			int ile_cyfr3=0;
+			int ile_cyfr4=0;
+			int ile_cyfr5=0;
+			int ile_cyfr6=0;
+			int ile_cyfr7=0;
+			int ile_cyfr8=0;
+			int ile_cyfr9=0;
+            
+			for (int a = 0 ; a < 10 ; a++) 
+			{
+				char cyfra1 = liczba.charAt(a); 
+				if(cyfra1 == '0') 
+				{                          
+					ile_cyfr0++;
+				}
+				if(cyfra1 == '1')
+				{
+					ile_cyfr1++;
+				}
+				if(cyfra1 == '2')
+				{
+					ile_cyfr2++;
+				}
+				if(cyfra1 == '3')
+				{
+					ile_cyfr3++;
+				}
+				if(cyfra1 == '4')
+				{
+					ile_cyfr4++;
+				}
+				if(cyfra1 == '5')
+				{
+					ile_cyfr5++;
+				}
+				if(cyfra1 == '6')
+				{
+					ile_cyfr6++;
+				}
+				if(cyfra1 == '7')
+				{
+					ile_cyfr7++;
+				}
+				if(cyfra1 == '8')
+				{
+					ile_cyfr8++;
+				}
+				if(cyfra1 == '9')
+				{
+					ile_cyfr9++;
+				}
+				
+					
+			}   
+			System.out.println("ile cyfr '0': "+ ile_cyfr0 +"\nile cyfr '1': "+ ile_cyfr1+"\nile cyfr '2': "+ ile_cyfr2+"\nile cyfr '3': "+ ile_cyfr3+"\nile cyfr '4': "+ ile_cyfr4+"\nile cyfr '5': "+ ile_cyfr5+"\nile cyfr '6': "+ ile_cyfr6+"\nile cyfr '7': "+ ile_cyfr7+"\nile cyfr '8': "+ ile_cyfr8+"\nile cyfr '9': "+ ile_cyfr9);
+			
+			
+			/*----------------------warunki dla......spelnienia warunkow :)-------*/
+			
+			if((cyfra[0] == 1)&&(ile_cyfr0 == 7)&&(ile_cyfr2 == 2))  // sprawdenie dla przykladowych warunkow
+			{
+				System.out.println("warunek spełniony");
+			}
+			else
+			{
+				System.out.println("liczba nie spełnia warunku. cyfra 0 = "+cyfra[0]+" ile cyfr 0 = "+ile_cyfr0+" ile cyfr 2 = "+ile_cyfr2);
+			}
+			// tu wstawic czesc odpowiadajaca za sprawdzanie warunkow
+			
+		}
+		
+		
+	
+    }
+
+}
