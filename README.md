@@ -19,12 +19,10 @@ a.) niespełnienie warunku dla '9' i '1':
     
 Zadanie 4.
 Optymalizacja kodu:
-(bez wydawania pieniędzy)
 1.) Wypracowanie lepszego algorytmu.
 2.) Sprawdzenie profilerem "wąskich gardeł".
 3.) Czytelność kodu.
 
-(z wydawaniem pieniędzy)
 4.) Zainwestowanie w szybsze podzespoły (procesor, RAM)
 
 
