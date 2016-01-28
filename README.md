@@ -19,9 +19,14 @@ a.) niespełnienie warunku dla '9' i '1':
     
 Zadanie 4.
 Optymalizacja kodu:
+(bez wydawania pieniędzy)
 1.) Wypracowanie lepszego algorytmu.
 2.) Sprawdzenie profilerem "wąskich gardeł".
 3.) Czytelność kodu.
+
+(z wydawaniem pieniędzy)
+4.) Zainwestowanie w szybsze podzespoły (procesor, RAM)
+
 
 Aby szybciej dojść do wyniku argorytmu:
 1.) Rozbicie wykonanego algorytmu na dwa (lub kilka) osobne urządzenia. Na jednym sprawdzamy jeden fragment zakresu, na drugim kilejny fragment (na kolejnym, kolejny). Czas wykonania zostanie skrócony wprost proporcjonalnie do ilości wykonywanych fragmentów kodu.
