@@ -7,19 +7,21 @@ public class zagadka
 {
 	public static void main(String[] args) 
 	{
-       long start = 0;			
+       long start = 1000000000;			
        long iloscIteracji;
        int ok=0;
-       
+       /*
        System.out.println("wpisz wartosc startowa: ");
        Scanner odczyt1 = new Scanner(System.in);
        
        start = odczyt1.nextLong();
-       
+       */
        System.out.println("wpisz ilosc iteracji: ");
        Scanner odczyt2 = new Scanner(System.in);
        
 		iloscIteracji = odczyt2.nextLong();
+		long odliczaj = System.currentTimeMillis();
+		
 		
 		for(long i = 0; i < iloscIteracji; i++)	// wybieram ile kolejnych liczb sprawdzic, zeby nie zajechac komputera
 		{
@@ -46,7 +48,7 @@ public class zagadka
 			int ile_cyfr8=0;
 			int ile_cyfr9=0;
             
-			for (int a = 0 ; a < liczba.length() ; a++) 
+			for (int a = 0 ; a < 10 ; a++) 
 			{
 				char cyfra1 = liczba.charAt(a); 
 				if(cyfra1 == '0') 
@@ -216,6 +218,16 @@ public class zagadka
 				//System.out.println("liczba nie spełnia warunku."); //\nliczba '0' = "+ile_cyfr0+"\nliczba '1' = "+ile_cyfr1+"\nliczba '2' = "+ile_cyfr2+"\nliczba '3' = "+ile_cyfr3+"\nliczba '4' = "+ile_cyfr4+"\nliczba '5' = "+ile_cyfr5+"\nliczba '6' = "+ile_cyfr6+"\nliczba '7' = "+ile_cyfr7+"\nliczba '8' = "+ile_cyfr8+"\nliczba '9' = "+ile_cyfr9);
 			}
 		}
+		long stop = System.currentTimeMillis();
+		
 		System.out.println("uzbierało się: "+ok+" liczb.");
+		
+		long sekunda = ((stop-odliczaj)/1000);
+		long minuta = sekunda/60;
+		
+		long sekund = sekunda%60;
+		
+		System.out.println("Zajęło to: "+sekunda+" sekund.");
+		System.out.println("Zajęło to: "+minuta+" minut i "+sekund+" sekund.");
     }
 }
