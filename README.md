@@ -23,7 +23,13 @@ Optymalizacja kodu:
 2.) Sprawdzenie profilerem "wąskich gardeł".
 3.) Czytelność kodu.
 
-4.) Zainwestowanie w szybsze podzespoły (procesor, RAM)
+4.) Zainwestowanie w szybsze podzespoły:
+    W zależności co jest wąskim gardłem.
+     - ilość tranzystorów w procesorze / taktowanie (generalnie szybkość) - szybkość kompilacji
+    - ilość rdzeni oraz ilość procesorów - programowanie równoległe, wielowątkowe
+    - RAM - zmieszczenie dużej ilości zmiennych, pojemniejsze tablice, ...
+    - dysk SSD, a HDD - nie ma wielkiej różnicy, ale jeśli się walczy o każdą milisekundę ... . Na pewno usprawnia ogólne działanie komputera.
+    
 
 
 Aby szybciej dojść do wyniku argorytmu:
